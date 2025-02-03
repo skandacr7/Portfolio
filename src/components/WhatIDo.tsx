@@ -87,15 +87,17 @@ const WhatIDo = () => {
             <div className="what-corner"></div>
 
             <div className="what-content-in">
-              <h3>DEVELOP</h3>
-              <h4>Description</h4>
+              <h3>WEB DEVELOPER</h3>
+              <h4></h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-                quia aliquid laboriosam ducimus sit molestiae.
+              "I'm a web developer who builds websites faster than you can say '404 Error.
+              I craft responsive, user-friendly designs with a mix of code and coffee,
+              ensuring that your site is as functional as it is stylish (and bug-free, hopefully)!"
               </p>
-              <h5>Skillset & tools</h5>
+              <p><b>Skillset & tool</b></p>
               <div className="what-content-flex">
                 <div className="what-tags">JavaScript</div>
+                <div className="what-tags">HTML</div>
                 <div className="what-tags">TypeScript</div>
                 <div className="what-tags">Three.js</div>
                 <div className="what-tags">React</div>
@@ -104,7 +106,6 @@ const WhatIDo = () => {
                 <div className="what-tags">Next.js</div>
                 <div className="what-tags">Express.js</div>
                 <div className="what-tags">PHP</div>
-                <div className="what-tags">MySql</div>
               </div>
               <div className="what-arrow"></div>
             </div>

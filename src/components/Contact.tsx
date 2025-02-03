@@ -11,13 +11,13 @@ const Contact = () => {
             <h4>Email</h4>
             <p>
               <a href="mailto:example@mail.com" data-cursor="disable">
-                abc@gmail.com
+                skandap.k@gmail.com
               </a>
             </p>
             <h4>Phone</h4>
             <p>
               <a href="tel:+919920782622" data-cursor="disable">
-                +91 9988776655
+                +91 6577392477
               </a>
             </p>
           </div>
@@ -32,7 +32,7 @@ const Contact = () => {
               Github <MdArrowOutward />
             </a>
             <a
-              href="https://www.linkedin.com"
+              href="https://www.linkedin.com/in/skanda-prasad-k-1a8407149/"
               target="_blank"
               data-cursor="disable"
               className="contact-social"
@@ -48,7 +48,7 @@ const Contact = () => {
               Twitter <MdArrowOutward />
             </a>
             <a
-              href="https://www.instagram.com"
+              href="https://www.instagram.com/skandaa_k/"
               target="_blank"
               data-cursor="disable"
               className="contact-social"
@@ -58,7 +58,7 @@ const Contact = () => {
           </div>
           <div className="contact-box">
             <h2>
-              Designed and Developed <br /> by <span>Kabir Singh</span>
+              Designed and Developed <br /> by <span>Skanda Krishna</span>
             </h2>
             <h5>
               <MdCopyright /> 2025

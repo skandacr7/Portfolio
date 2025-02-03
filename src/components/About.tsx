@@ -6,9 +6,10 @@ const About = () => {
       <div className="about-me">
         <h3 className="title">About Me</h3>
         <p className="para">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis
-          dolores numquam iusto Ratione earum ducimus autem id iure pariatur
-          dolorum quae maiores.
+        I'm a designer and developer based out from <b>INDIA</b>, fueled by coffee, curiosity,
+        and an undeniable love for butter chicken.
+        I turn ideas into clean code and sleek designs, often chasing perfection. 
+        If there's a new skill to learn, I'll probably lose sleep over it, then fix it with more coffee.
         </p>
       </div>
     </div>

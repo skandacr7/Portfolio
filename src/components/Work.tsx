@@ -48,7 +48,7 @@ const Work = () => {
           My <span>Work</span>
         </h2>
         <div className="work-flex">
-          {[...Array(6)].map((_value, index) => (
+          {[...Array(3)].map((_value, index) => (
             <div className="work-box" key={index}>
               <div className="work-info">
                 <div className="work-title">
