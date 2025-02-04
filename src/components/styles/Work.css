@@ -13,6 +13,24 @@
   overflow: hidden;
 }
 
+.work-section h2 {
+  font-size: 70px;
+  line-height: 70px;
+  font-weight: 400;
+  text-align: center;
+  background: linear-gradient(0deg, #7f40ff, #ffffff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  margin-top: 50px;
+  margin-bottom: 90px;
+}
+.work-section h2 > span {
+  font-family: "Geist", sans-serif;
+  font-weight: 300;
+}
+
 .work-flex {
   display: flex;
   height: 100%;

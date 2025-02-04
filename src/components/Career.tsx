@@ -15,10 +15,10 @@ const Career = () => {
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Position In Company</h4>
-                <h5>Company Name</h5>
+                <h4>Data Engineer</h4>
+                <h5>KPMG</h5>
               </div>
-              <h3>20XX</h3>
+              <h3></h3>
             </div>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
@@ -29,10 +29,10 @@ const Career = () => {
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Position In Company</h4>
-                <h5>Company Name</h5>
+                <h4>Tech Analyst</h4>
+                <h5>Interview bit</h5>
               </div>
-              <h3>20XX</h3>
+              <h3></h3>
             </div>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
@@ -43,10 +43,10 @@ const Career = () => {
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Position In Company</h4>
-                <h5>Company Name</h5>
+                <h4>Integration Analyst</h4>
+                <h5>Plugin hive</h5>
               </div>
-              <h3>NOW</h3>
+              <h3></h3>
             </div>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim

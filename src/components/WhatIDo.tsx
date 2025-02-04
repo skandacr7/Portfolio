@@ -148,23 +148,18 @@ const WhatIDo = () => {
             </div>
             <div className="what-corner"></div>
             <div className="what-content-in">
-              <h3>DESIGN</h3>
-              <h4>Description</h4>
+              <h3>PART TIME FREELANCER</h3>
+             
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-                quia aliquid laboriosam ducimus sit molestiae
+                Just another freelancer not a influncer haha! with some time in hand and with
+                 some unique skills and a lot of passion with a caffeine addiction.
+                Always priotizing my clients and getting the job done always before the requested time is my strong suit.
               </p>
-              <h5>Skillset & tools</h5>
-              <div className="what-content-flex">
-                <div className="what-tags">Blender</div>
-                <div className="what-tags">Zbrush</div>
+              <h5></h5>
+              {/*<div className="what-content-flex">
                 <div className="what-tags">UI Design</div>
-                <div className="what-tags">Motion</div>
-                <div className="what-tags">Rigging</div>
-                <div className="what-tags">3D Animation</div>
-                <div className="what-tags">Character Design</div>
-                <div className="what-tags">Modelling</div>
-              </div>
+                
+              </div>*/}
               <div className="what-arrow"></div>
             </div>
           </div>

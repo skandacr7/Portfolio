@@ -10,10 +10,44 @@ const Work = () => {
   // Array of image paths for each project
   const images = [
     "/images/project1.webp",
-    "/images/project.jpg",
+    "/images/project.jpg", 
     "/images/project3.webp",
     "/images/project4.webp",
     "/images/project5.webp"
+  ];
+
+  // Array of information for each project
+  const projectInfo = [
+    {
+      title: "Project 01",
+      category: "Web Development",
+      tools: "JavaScript, React, CSS",
+      description: "A portfolio website showcasing my work.",
+    },
+    {
+      title: "Project 02",
+      category: "Mobile App",
+      tools: "React Native, Firebase",
+      description: "A mobile app for task management.",
+    },
+    {
+      title: "Project 03",
+      category: "E-commerce",
+      tools: "Next.js, Node.js, MongoDB",
+      description: "An online store with a smooth shopping experience.",
+    },
+    {
+      title: "Project 04",
+      category: "Game Development",
+      tools: "Unity, C#",
+      description: "A 3D game created with Unity.",
+    },
+    {
+      title: "Project 05",
+      category: "VR Experience",
+      tools: "Three.js, WebVR",
+      description: "A virtual reality experience for browsers.",
+    }
   ];
 
   useGSAP(() => {
@@ -65,15 +99,16 @@ const Work = () => {
                 <div className="work-title">
                   <h3>0{index + 1}</h3>
                   <div>
-                    <h4>Project Name</h4>
-                    <p>Category</p>
+                    <h4>{projectInfo[index].title}</h4> {/* Project title */}
+                    <p>{projectInfo[index].category}</p> {/* Project category */}
                   </div>
                 </div>
                 <h4>Tools and Features</h4>
-                <p>JavaScript, TypeScript, React, Three.js</p>
+                <p>{projectInfo[index].tools}</p> {/* Tools for each project */}
+                <p>{projectInfo[index].description}</p> {/* Description for each project */}
               </div>
               {/* Pass the corresponding image from the array */}
-              <WorkImage image={images[index]} alt={`Project ${index + 1}`} />
+              <WorkImage image={images[index]} alt={projectInfo[index].title} />
             </div>
           ))}
         </div>
