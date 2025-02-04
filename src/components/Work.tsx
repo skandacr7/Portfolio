@@ -4,43 +4,54 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
-gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(ScrollTrigger);
 
 const Work = () => {
+  // Array of image paths for each project
+  const images = [
+    "/images/project1.webp",
+    "/images/project.jpg",
+    "/images/project3.webp",
+    "/images/project4.webp",
+    "/images/project5.webp"
+  ];
+
   useGSAP(() => {
-    let translateX: number = 0;
+    let translateX = 0;
+
     function setTranslateX() {
-      const box = document.getElementsByClassName("work-box");
-      const rectLeft = document
-        .querySelector(".work-container")!
-        .getBoundingClientRect().left;
-      const rect = box[0].getBoundingClientRect();
-      const parentWidth = box[0].parentElement!.getBoundingClientRect().width;
-      let padding: number =
-        parseInt(window.getComputedStyle(box[0]).padding) / 2;
-      translateX = rect.width * box.length - (rectLeft + parentWidth) + padding;
+      const boxes = document.querySelectorAll(".work-box");
+      if (boxes.length === 0) return;
+
+      const container = document.querySelector(".work-container");
+      if (!container) return;
+
+      // Get the width of the container and individual boxes
+      const containerWidth = container.getBoundingClientRect().width;
+      const boxWidth = boxes[0].getBoundingClientRect().width;
+      const totalWidth = boxWidth * boxes.length; // Total width of all boxes
+
+      // Set translateX to start from the far right
+      translateX = totalWidth - containerWidth; // This will move the content to the right initially
     }
 
     setTranslateX();
 
-    let timeline = gsap.timeline({
+    // GSAP horizontal scrolling animation (right to left)
+    gsap.to(".work-flex", {
+      x: -translateX, // Moves right to left
+      duration: 40,
+      ease: "none",
       scrollTrigger: {
         trigger: ".work-section",
-        start: "top top",
-        end: "bottom top",
-        scrub: true,
-        pin: true,
-        pinType: !ScrollTrigger.isTouch ? "transform" : "fixed",
-        id: "work",
+        start: "top top", // Scroll starts when the section hits the top
+        end: "200% top", // Scroll until the end of the section
+        scrub: 1, // Makes the scroll smooth
+        pin: true, // Pins the section during scroll
       },
     });
-
-    timeline.to(".work-flex", {
-      x: -translateX,
-      duration: 40,
-      delay: 0.2,
-    });
   }, []);
+
   return (
     <div className="work-section" id="work">
       <div className="work-container section-container">
@@ -48,21 +59,21 @@ const Work = () => {
           My <span>Work</span>
         </h2>
         <div className="work-flex">
-          {[...Array(3)].map((_value, index) => (
+          {[...Array(5)].map((_value, index) => (
             <div className="work-box" key={index}>
               <div className="work-info">
                 <div className="work-title">
                   <h3>0{index + 1}</h3>
-
                   <div>
                     <h4>Project Name</h4>
                     <p>Category</p>
                   </div>
                 </div>
-                <h4>Tools and features</h4>
-                <p>Javascript, TypeScript, React, Threejs</p>
+                <h4>Tools and Features</h4>
+                <p>JavaScript, TypeScript, React, Three.js</p>
               </div>
-              <WorkImage image="/images/placeholder.webp" alt="" />
+              {/* Pass the corresponding image from the array */}
+              <WorkImage image={images[index]} alt={`Project ${index + 1}`} />
             </div>
           ))}
         </div>

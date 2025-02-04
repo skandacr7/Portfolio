@@ -5,7 +5,8 @@ const Contact = () => {
   return (
     <div className="contact-section section-container" id="contact">
       <div className="contact-container">
-        <h3>Contact</h3>
+        <h3>Don't be shy to Contact</h3>
+        <h3>let's do something great together</h3>
         <div className="contact-flex">
           <div className="contact-box">
             <h4>Email</h4>
@@ -17,7 +18,7 @@ const Contact = () => {
             <h4>Phone</h4>
             <p>
               <a href="tel:+919920782622" data-cursor="disable">
-                +91 6577392477
+                +1 6577392477
               </a>
             </p>
           </div>

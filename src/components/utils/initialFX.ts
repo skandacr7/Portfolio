@@ -1,24 +1,17 @@
-import SplitText from "gsap/SplitText";
+import { SplitText } from "gsap-trial/SplitText";
 import gsap from "gsap";
-import Lenis from "@studio-freight/lenis"; // Using Lenis for smooth scrolling
+import { smoother } from "../Navbar";
 
 export function initialFX() {
   document.body.style.overflowY = "auto";
-
-  // Pause Lenis smooth scroll
-  const lenis = new Lenis();
-  lenis.stop(); // Equivalent to smoother.paused(false)
-
+  smoother.paused(false);
   document.getElementsByTagName("main")[0].classList.add("main-active");
-
-  // GSAP background color transition
   gsap.to("body", {
     backgroundColor: "#0b080c",
     duration: 0.5,
     delay: 1,
   });
 
-  // Split text for animation
   var landingText = new SplitText(
     [".landing-info h3", ".landing-intro h2", ".landing-intro h1"],
     {
@@ -26,8 +19,6 @@ export function initialFX() {
       linesClass: "split-line",
     }
   );
-
-  // GSAP animation for text entry
   gsap.fromTo(
     landingText.chars,
     { opacity: 0, y: 80, filter: "blur(5px)" },
@@ -70,7 +61,6 @@ export function initialFX() {
       delay: 0.8,
     }
   );
-  
   gsap.fromTo(
     [".header", ".icons-section", ".nav-fade"],
     { opacity: 0 },
@@ -90,7 +80,6 @@ export function initialFX() {
   LoopText(landingText4, landingText5);
 }
 
-// Loop text animation
 function LoopText(Text1: SplitText, Text2: SplitText) {
   var tl = gsap.timeline({ repeat: -1, repeatDelay: 1 });
   const delay = 4;
@@ -145,4 +134,3 @@ function LoopText(Text1: SplitText, Text2: SplitText) {
       1
     );
 }
-

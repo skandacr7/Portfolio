@@ -4,9 +4,25 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const WhatIDo = () => {
   const containerRef = useRef<(HTMLDivElement | null)[]>([]);
+
   const setRef = (el: HTMLDivElement | null, index: number) => {
     containerRef.current[index] = el;
   };
+
+  const handleClick = (container: HTMLDivElement) => {
+    container.classList.toggle("what-content-active");
+    container.classList.remove("what-sibling");
+    if (container.parentElement) {
+      const siblings = Array.from(container.parentElement.children);
+      siblings.forEach((sibling) => {
+        if (sibling !== container) {
+          sibling.classList.remove("what-content-active");
+          sibling.classList.toggle("what-sibling");
+        }
+      });
+    }
+  };
+
   useEffect(() => {
     if (ScrollTrigger.isTouch) {
       containerRef.current.forEach((container) => {
@@ -16,6 +32,8 @@ const WhatIDo = () => {
         }
       });
     }
+
+    // Cleanup the event listeners when the component unmounts
     return () => {
       containerRef.current.forEach((container) => {
         if (container) {
@@ -24,6 +42,7 @@ const WhatIDo = () => {
       });
     };
   }, []);
+
   return (
     <div className="whatIDO">
       <div className="what-box">
@@ -90,9 +109,9 @@ const WhatIDo = () => {
               <h3>WEB DEVELOPER</h3>
               <h4></h4>
               <p>
-              "I'm a web developer who builds websites faster than you can say '404 Error.
-              I craft responsive, user-friendly designs with a mix of code and coffee,
-              ensuring that your site is as functional as it is stylish (and bug-free, hopefully)!"
+                "I'm a web developer who builds websites faster than you can say '404 Error.
+                I craft responsive, user-friendly designs with a mix of code and coffee,
+                ensuring that your site is as functional as it is stylish (and bug-free, hopefully)!"
               </p>
               <p><b>Skillset & tool</b></p>
               <div className="what-content-flex">
@@ -156,18 +175,3 @@ const WhatIDo = () => {
 };
 
 export default WhatIDo;
-
-function handleClick(container: HTMLDivElement) {
-  container.classList.toggle("what-content-active");
-  container.classList.remove("what-sibling");
-  if (container.parentElement) {
-    const siblings = Array.from(container.parentElement.children);
-
-    siblings.forEach((sibling) => {
-      if (sibling !== container) {
-        sibling.classList.remove("what-content-active");
-        sibling.classList.toggle("what-sibling");
-      }
-    });
-  }
-}
