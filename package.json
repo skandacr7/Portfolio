@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
+    "@gsap/shockingly": "^3.12.7",
     "@react-three/cannon": "^6.6.0",
     "@react-three/drei": "^9.120.4",
     "@react-three/fiber": "^8.17.10",
