@@ -9,11 +9,11 @@ gsap.registerPlugin(ScrollTrigger);
 const Work = () => {
   // Array of image paths for each project
   const images = [
-    "/images/project1.webp",
-    "/images/project.jpg", 
-    "/images/project3.webp",
-    "/images/project4.webp",
-    "/images/project5.webp"
+    "/images/image-2.jpg",
+    "/images/image-4.jpg", 
+    "/images/images-1.jpg",
+    "/images/project.jpg",
+    "/images/images-5.webp"
   ];
 
   // Array of information for each project

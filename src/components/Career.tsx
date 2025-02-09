@@ -21,9 +21,9 @@ const Career = () => {
               <h3></h3>
             </div>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
-              labore sit non ipsum temporibus quidem, deserunt eaque officiis
-              mollitia ratione suscipit repellat.
+            Data Engineer who turns messy data into gold—because spreadsheets deserve better! 
+            Worked with giants like Wells Fargo and General Mills, making their data work smarter, not harder. 
+            Fluent in Python, SQL, and cloud tech—basically a data wizard without the robe.
             </p>
           </div>
           <div className="career-info-box">
@@ -35,9 +35,10 @@ const Career = () => {
               <h3></h3>
             </div>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
-              labore sit non ipsum temporibus quidem, deserunt eaque officiis
-              mollitia ratione suscipit repellat.
+            As Techical Analyst at InterviewBit, i focused on optimizing platforms, 
+            improving system performance, and enhancing user experience. 
+            Worked on troubleshooting, system optimization, and process automation. 
+            Played a key role in streamlining operations and ensuring system reliability.
             </p>
           </div>
           <div className="career-info-box">
@@ -49,9 +50,9 @@ const Career = () => {
               <h3></h3>
             </div>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
-              labore sit non ipsum temporibus quidem, deserunt eaque officiis
-              mollitia ratione suscipit repellat.
+             As a Integration Analyst the role was challenging and fun at PluginHive, 
+             i was focused on seamless third-party integrations and plugin integrations with
+             troubleshooting. While Working on enhancing platform connectivity and automating processes.
             </p>
           </div>
         </div>

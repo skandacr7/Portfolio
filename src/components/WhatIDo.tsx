@@ -118,12 +118,10 @@ const WhatIDo = () => {
                 <div className="what-tags">JavaScript</div>
                 <div className="what-tags">HTML</div>
                 <div className="what-tags">TypeScript</div>
-                <div className="what-tags">Three.js</div>
                 <div className="what-tags">React</div>
                 <div className="what-tags">Css</div>
                 <div className="what-tags">Node.js</div>
                 <div className="what-tags">Next.js</div>
-                <div className="what-tags">Express.js</div>
                 <div className="what-tags">PHP</div>
               </div>
               <div className="what-arrow"></div>
