@@ -18,7 +18,15 @@ const Work = () => {
   ];
 
   // Array of information for each project
-  const projectInfo = [
+  type Project = {
+    title: string;
+    category: string;
+    tools: string;
+    description: string;
+    link?: string | null;
+  };
+
+  const projectInfo: Project[] = [
     {
       title: "Project 01",
       category: "Web Development",
