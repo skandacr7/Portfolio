@@ -1,4 +1,5 @@
 import { lazy, PropsWithChildren, Suspense, useEffect, useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import About from "./About";
 import Career from "./Career";
 import Contact from "./Contact";
@@ -8,7 +9,6 @@ import Navbar from "./Navbar";
 import SocialIcons from "./SocialIcons";
 import WhatIDo from "./WhatIDo";
 import Work from "./Work";
-
 import setSplitText from "./utils/splitText";
 
 const TechStack = lazy(() => import("./TechStack"));
@@ -31,29 +31,41 @@ const MainContainer = ({ children }: PropsWithChildren) => {
   }, [isDesktopView]);
 
   return (
-    <div className="container-main">
-      <Cursor />
-      <Navbar />
-      <SocialIcons />
-      {isDesktopView && children}
-      <div id="smooth-wrapper">
-        <div id="smooth-content">
-          <div className="container-main">
-            <Landing>{!isDesktopView && children}</Landing>
-            <About />
-            <WhatIDo />
-            <Career />
-            <Work />
-            {isDesktopView && (
-              <Suspense fallback={<div>Loading....</div>}>
-                <TechStack />
-              </Suspense>
-            )}
-            <Contact />
+    <Router>
+      <div className="container-main">
+        <Cursor />
+        <Navbar />
+        <SocialIcons />
+        {isDesktopView && children}
+        <div id="smooth-wrapper">
+          <div id="smooth-content">
+            <div className="container-main">
+              <Landing>{!isDesktopView && children}</Landing>
+              <Routes>
+                <Route
+                  path="/"
+                  element={
+                    <>
+                      <About />
+                      <WhatIDo />
+                      <Career />
+                      <Work />
+                      {isDesktopView && (
+                        <Suspense fallback={<div>Loading....</div>}>
+                          <TechStack />
+                        </Suspense>
+                      )}
+                      <Contact />
+                    </>
+                  }
+                />
+                {/* Removed the Gaming Route */}
+              </Routes>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </Router>
   );
 };
 

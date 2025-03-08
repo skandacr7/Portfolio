@@ -3,6 +3,7 @@ import WorkImage from "./WorkImage";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -10,7 +11,7 @@ const Work = () => {
   // Array of image paths for each project
   const images = [
     "/images/gradly.jpg",
-    "/images/gaming.jpg", 
+    "/images/gaming.jpg",
     "/images/chatterlink.jpg",
     "/images/quickmail.jpg",
     "/images/emotional intelligence.jpg"
@@ -23,31 +24,35 @@ const Work = () => {
       category: "Web Development",
       tools: "JavaScript, React, CSS",
       description: "A portfolio website showcasing my work.",
+      link: null,
     },
     {
       title: "Project 02",
-      category: "Mobile App",
-      tools: "React Native, Firebase",
-      description: "A mobile app for task management.",
+      category: "Game Development",
+      tools: "Unity, C#",
+      description: "A 3D game created with Unity.",
     },
     {
       title: "Project 03",
       category: "E-commerce",
       tools: "Next.js, Node.js, MongoDB",
       description: "An online store with a smooth shopping experience.",
+      link: null,
     },
     {
       title: "Project 04",
-      category: "Game Development",
-      tools: "Unity, C#",
-      description: "A 3D game created with Unity.",
+      category: "Mobile App",
+      tools: "React Native, Firebase",
+      description: "A mobile app for task management.",
+      link: null,
     },
     {
       title: "Project 05",
       category: "VR Experience",
       tools: "Three.js, WebVR",
       description: "A virtual reality experience for browsers.",
-    }
+      link: null,
+    },
   ];
 
   useGSAP(() => {
@@ -66,7 +71,7 @@ const Work = () => {
       const totalWidth = boxWidth * boxes.length; // Total width of all boxes
 
       // Set translateX to start from the far right
-      translateX = totalWidth - containerWidth; // This will move the content to the right initially
+      translateX = totalWidth - containerWidth; // Moves content to the right initially
     }
 
     setTranslateX();
@@ -78,10 +83,10 @@ const Work = () => {
       ease: "none",
       scrollTrigger: {
         trigger: ".work-section",
-        start: "top top", // Scroll starts when the section hits the top
-        end: "200% top", // Scroll until the end of the section
-        scrub: 1, // Makes the scroll smooth
-        pin: true, // Pins the section during scroll
+        start: "top top",
+        end: "200% top",
+        scrub: 1,
+        pin: true,
       },
     });
   }, []);
@@ -93,22 +98,29 @@ const Work = () => {
           My <span>Work</span>
         </h2>
         <div className="work-flex">
-          {[...Array(5)].map((_value, index) => (
+          {projectInfo.map((project, index) => (
             <div className="work-box" key={index}>
               <div className="work-info">
                 <div className="work-title">
                   <h3>0{index + 1}</h3>
                   <div>
-                    <h4>{projectInfo[index].title}</h4> {/* Project title */}
-                    <p>{projectInfo[index].category}</p> {/* Project category */}
+                    <h4>{project.title}</h4>
+                    <p>{project.category}</p>
                   </div>
                 </div>
                 <h4>Tools and Features</h4>
-                <p>{projectInfo[index].tools}</p> {/* Tools for each project */}
-                <p>{projectInfo[index].description}</p> {/* Description for each project */}
+                <p>{project.tools}</p>
+                <p>{project.description}</p>
               </div>
-              {/* Pass the corresponding image from the array */}
-              <WorkImage image={images[index]} alt={projectInfo[index].title} />
+              
+              {/* Check if the project has a link (only gaming does) */}
+              {project.link ? (
+                <Link to={project.link}>
+                  <WorkImage image={images[index]} alt={project.title} />
+                </Link>
+              ) : (
+                <WorkImage image={images[index]} alt={project.title} />
+              )}
             </div>
           ))}
         </div>
