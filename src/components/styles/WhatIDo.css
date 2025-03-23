@@ -37,12 +37,12 @@
   height: 500px;
   margin-left: 200px;
   position: relative;
-  display: none;
+  display: flex; /* Changed from 'display: none' to make content visible */
 }
 .what-content {
   width: 450px;
-  height: 33%;
-  min-height: 50%;
+  height: auto; /* Changed from fixed height percentage */
+  min-height: 150px; /* Added min-height for content */
   transition: 0.5s;
   /* border: 0.5px dashed rgba(255, 255, 255, 0.3); */
   position: relative;
@@ -84,6 +84,8 @@
   opacity: 0;
   animation: whatFlicker 0.5s 1 forwards;
   animation-delay: 1s;
+  height: auto; /* Changed from fixed height */
+  min-height: 100px; /* Added min-height */
 }
 @keyframes whatFlicker {
   0%,
@@ -204,10 +206,13 @@
   transform: translateY(-50%);
   position: absolute;
 }
+
+/* Modified to ensure proper content visibility */
 .what-content-in {
-  height: 100%;
-  overflow: hidden;
+  height: auto;
+  overflow: visible; /* Changed from 'overflow: hidden' */
 }
+
 .what-content-in h5 {
   font-weight: 300;
   opacity: 0.5;
@@ -226,6 +231,25 @@
     opacity: 0.2;
   }
 }
+
+/* Hide skills section by default */
+.what-content p:first-of-type {
+  display: block; /* Always show first paragraph */
+}
+
+.what-content p:nth-of-type(2),
+.what-content .what-content-flex {
+  display: none; /* Hide skills section by default */
+}
+
+/* Show skills section when active/hover */
+.what-noTouch:hover p:nth-of-type(2),
+.what-content-active p:nth-of-type(2),
+.what-noTouch:hover .what-content-flex,
+.what-content-active .what-content-flex {
+  display: block; /* Show skills section when active */
+}
+
 .what-content-flex {
   display: flex;
   gap: 5px;
