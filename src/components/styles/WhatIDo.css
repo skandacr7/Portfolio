@@ -38,6 +38,7 @@
   margin-left: 200px;
   position: relative;
   display: flex; /* Changed from 'display: none' to make content visible */
+  overflow: hidden; /* Added to contain content */
 }
 .what-content {
   width: 450px;
@@ -48,12 +49,16 @@
   position: relative;
   padding: 50px;
   box-sizing: border-box;
+  overflow: hidden; /* Added to contain content */
+  max-height: 500px; /* Added maximum height */
 }
 
 .what-noTouch:hover,
 .what-content-active {
   min-height: 67%;
   padding: 40px 50px;
+  max-height: 400px; /* Added maximum expanded height */
+  overflow: auto; /* Added to allow scrolling if needed */
 }
 
 .what-noTouch:hover ~ .what-content,
@@ -86,6 +91,7 @@
   animation-delay: 1s;
   height: auto; /* Changed from fixed height */
   min-height: 100px; /* Added min-height */
+  overflow: visible; /* Changed from 'overflow: hidden' */
 }
 @keyframes whatFlicker {
   0%,
@@ -207,12 +213,6 @@
   position: absolute;
 }
 
-/* Modified to ensure proper content visibility */
-.what-content-in {
-  height: auto;
-  overflow: visible; /* Changed from 'overflow: hidden' */
-}
-
 .what-content-in h5 {
   font-weight: 300;
   opacity: 0.5;
@@ -254,6 +254,7 @@
   display: flex;
   gap: 5px;
   flex-wrap: wrap;
+  max-width: 100%; /* Added to prevent horizontal overflow */
 }
 .what-tags {
   font-size: 13px;
@@ -274,6 +275,7 @@
   }
   .what-box-in {
     height: 400px;
+    overflow: hidden; /* Added to contain content */
   }
   .what-content h3 {
     font-size: 28px;
@@ -281,6 +283,8 @@
   .what-content {
     padding: 30px;
     width: 400px;
+    max-height: 400px; /* Added maximum height */
+    overflow: hidden; /* Added to contain content */
   }
   .what-content p {
     font-size: 13px;
@@ -288,6 +292,8 @@
   .what-noTouch:hover,
   .what-content-active {
     padding: 20px 30px;
+    max-height: 350px; /* Added maximum expanded height */
+    overflow: auto; /* Added to allow scrolling if needed */
   }
 
   .what-noTouch:hover ~ .what-content,
@@ -316,10 +322,13 @@
   .what-box-in {
     height: 500px;
     margin-left: -50px;
+    overflow: hidden; /* Added to contain content */
   }
   .what-content {
     padding: 50px;
     width: 500px;
+    overflow: hidden; /* Added to contain content */
+    max-height: 500px; /* Added maximum height */
   }
   .what-content p {
     font-size: 14px;
@@ -328,6 +337,8 @@
   .what-content-active {
     min-height: 67%;
     padding: 50px;
+    max-height: 400px; /* Added maximum expanded height */
+    overflow: auto; /* Added to allow scrolling if needed */
   }
 
   .what-noTouch:hover ~ .what-content,
@@ -359,10 +370,13 @@
   }
   .what-content {
     width: 100%;
+    overflow: hidden; /* Added to contain content */
+    max-height: 400px; /* Added maximum height */
   }
   .what-box-in {
     margin-left: 0px;
     height: 450px;
+    overflow: hidden; /* Added to contain content */
   }
   .what-content h5,
   .what-content-flex {
@@ -384,6 +398,8 @@
   .what-noTouch:hover,
   .what-content-active {
     padding: 10px 30px;
+    max-height: 350px; /* Added maximum expanded height */
+    overflow: auto; /* Added to allow scrolling if needed */
   }
   .what-tags {
     font-size: 11px;
